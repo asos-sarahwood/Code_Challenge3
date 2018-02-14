@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using NServiceBus;
 using NServiceBus.Logging;
-using Shared;
 
 namespace Subscriber
 {
+    using Shared;
 
     public class OrderCreatedHandler :
         IHandleMessages<OrderPlaced>
     {
-        static ILog log = LogManager.GetLogger<OrderCreatedHandler>();
+         static ILog log = LogManager.GetLogger<OrderCreatedHandler>();
 
         public Task Handle(OrderPlaced message, IMessageHandlerContext context)
         {
@@ -21,4 +21,6 @@ namespace Subscriber
             return Task.CompletedTask;
         }
     }
+
+    
 }

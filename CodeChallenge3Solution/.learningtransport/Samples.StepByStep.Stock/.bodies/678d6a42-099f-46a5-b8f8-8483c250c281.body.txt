@@ -1,0 +1,1 @@
+<?xml version="1.0"?><PlaceOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.net/Shared"><Id>b2f533d2-89c8-4649-bb8f-de846b6c55af</Id><Product>New shoes</Product></PlaceOrder>

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NServiceBus;
+using static ConfigureHandlerSettings;
 using Shared;
 
 namespace Client
-{ 
+{
     class Program
     {
         static async Task Main()
@@ -66,16 +67,16 @@ namespace Client
                 {
                     return;
                 }
-                var id = Guid.NewGuid();
+                var orderId = Guid.NewGuid();
 
                 var placeOrder = new PlaceOrder
                 {
                     Product = "New shoes",
-                    Id = id
+                    OrderId = orderId
                 };
                 await endpointInstance.Send("Samples.StepByStep.Server", placeOrder)
                     .ConfigureAwait(false);
-                Console.WriteLine($"Sent a PlaceOrder message with id: {id:N}");
+                Console.WriteLine($"Sent a PlaceOrder message with id: {orderId:N}");
             }
         }
     }

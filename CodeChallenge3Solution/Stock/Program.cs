@@ -5,16 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using NServiceBus;
 using static ConfigureHandlerSettings;
-using Shared;
 
-namespace Server
+namespace Stock
 {
     class Program
     {
         static async Task Main()
         {
-            Console.Title = "Samples.StepByStep.Server";
-            var endpointConfiguration = new EndpointConfiguration("Samples.StepByStep.Server");
+            Console.Title = "Samples.StepByStep.Stock";
+            var endpointConfiguration = new EndpointConfiguration("Samples.StepByStep.Stock");
             endpointConfiguration.UseSerialization<XmlSerializer>();
             endpointConfiguration.EnableInstallers();
             endpointConfiguration.UsePersistence<LearningPersistence>();
