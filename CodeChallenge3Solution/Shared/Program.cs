@@ -17,7 +17,6 @@ namespace Shared
     {
         public Guid OrderId { get; set; }
         public string Product { get; set; }
-        public bool InStock { get; set; }
     }
 
     public class StockLevel : IEvent

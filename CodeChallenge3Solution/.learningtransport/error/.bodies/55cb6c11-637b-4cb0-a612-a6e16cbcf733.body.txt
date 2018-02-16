@@ -1,0 +1,1 @@
+<?xml version="1.0"?><CheckStock xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.net/Shared"><OrderId>ee366e7d-619b-48c0-b7d1-bde642c2996c</OrderId><Product>New shoes</Product></CheckStock>

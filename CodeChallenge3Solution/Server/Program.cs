@@ -13,8 +13,10 @@ namespace Server
     {
         static async Task Main()
         {
-            Console.Title = "Samples.StepByStep.Server";
-            var endpointConfiguration = new EndpointConfiguration("Samples.StepByStep.Server");
+            ConsoleProperties.SetWindowSize();
+
+            Console.Title = "Server";
+            var endpointConfiguration = new EndpointConfiguration("Server");
             endpointConfiguration.UseSerialization<XmlSerializer>();
             endpointConfiguration.EnableInstallers();
             endpointConfiguration.UsePersistence<LearningPersistence>();

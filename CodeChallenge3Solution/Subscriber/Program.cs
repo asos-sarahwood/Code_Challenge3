@@ -7,12 +7,16 @@ using NServiceBus;
 
 namespace Subscriber
 {
+    using Shared;
+
     class Program
     {
         static async Task Main()
         {
-            Console.Title = "Samples.StepByStep.Subscriber";
-            var endpointConfiguration = new EndpointConfiguration("Samples.StepByStep.Subscriber");
+
+            ConsoleProperties.SetWindowSize();
+            Console.Title = "Subscriber";
+            var endpointConfiguration = new EndpointConfiguration("Subscriber");
             endpointConfiguration.UseSerialization<XmlSerializer>();
             endpointConfiguration.UsePersistence<LearningPersistence>();
             endpointConfiguration.UseTransport<LearningTransport>();
@@ -21,7 +25,7 @@ namespace Subscriber
                 .ConfigureAwait(false);
             try
             {
-                Console.WriteLine("Press any key to exit");
+                //Console.WriteLine("Press any key to exit");
                 Console.ReadKey();
             }
             finally

@@ -1,0 +1,15 @@
+{
+  "NServiceBus.MessageId": "5ba87a24-3c4a-41fe-822f-a88900d53b7d",
+  "NServiceBus.MessageIntent": "Publish",
+  "NServiceBus.ReplyToAddress": "Stock",
+  "NServiceBus.CorrelationId": "063fffca-9de4-486e-94e5-a88900d53b08",
+  "NServiceBus.OriginatingMachine": "ASGLH-WL-13677",
+  "NServiceBus.OriginatingEndpoint": "Stock",
+  "$.diagnostics.originating.hostid": "e9f088b4bdb545d1d02330c5878a3db6",
+  "NServiceBus.ContentType": "text\/xml",
+  "NServiceBus.EnclosedMessageTypes": "Shared.StockLevel, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+  "NServiceBus.RelatedTo": "06ddc175-33bb-412e-9de8-a88900d53b44",
+  "NServiceBus.ConversationId": "a74d94c6-64fe-4e7b-8844-a88900d53b12",
+  "NServiceBus.Version": "6.4.3",
+  "NServiceBus.TimeSent": "2018-02-16 12:56:21:343727 Z"
+}

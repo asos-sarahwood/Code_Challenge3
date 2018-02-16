@@ -5,15 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using NServiceBus;
 using static ConfigureHandlerSettings;
-
+using Shared;
 namespace Stock
 {
+
+
     class Program
-    {
+    { 
         static async Task Main()
         {
-            Console.Title = "Samples.StepByStep.Stock";
-            var endpointConfiguration = new EndpointConfiguration("Samples.StepByStep.Stock");
+            ConsoleProperties.SetWindowSize();
+            Console.Title = "Stock";
+            
+            var endpointConfiguration = new EndpointConfiguration("Stock");
             endpointConfiguration.UseSerialization<XmlSerializer>();
             endpointConfiguration.EnableInstallers();
             endpointConfiguration.UsePersistence<LearningPersistence>();
@@ -24,7 +28,7 @@ namespace Stock
                 .ConfigureAwait(false);
             try
             {
-                Console.WriteLine("Press any key to exit");
+                //Console.WriteLine("Press any key to exit");
                 Console.ReadKey();
             }
             finally

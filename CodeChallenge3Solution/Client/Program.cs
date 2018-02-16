@@ -1,25 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using NServiceBus;
-using static ConfigureHandlerSettings;
 using Shared;
+using NServiceBus.Logging;
 
 namespace Client
 {
+
+
     class Program
     {
+        static ILog log = LogManager.GetLogger<IEndpointInstance>();
+
         static async Task Main()
         {
-            // This makes it easier to tell console windows apart
-            Console.Title = "Samples.StepByStep.Client";
+            ConsoleProperties.SetWindowSize();
 
+            // This makes it easier to tell console windows apart
+            Console.Title = "Client";
+           
             // The endpoint name will be used to determine queue names and serves
             // as the address, or identity, of the endpoint
             var endpointConfiguration = new EndpointConfiguration(
-                endpointName: "Samples.StepByStep.Client");
+                endpointName: "Client");
 
             endpointConfiguration.SendFailedMessagesTo("error");
 
@@ -56,7 +59,6 @@ namespace Client
         static async Task SendOrder(IEndpointInstance endpointInstance)
         {
             Console.WriteLine("Press enter to send a message");
-            Console.WriteLine("Press any key to exit");
 
             while (true)
             {
@@ -74,9 +76,10 @@ namespace Client
                     Product = "New shoes",
                     OrderId = orderId
                 };
-                await endpointInstance.Send("Samples.StepByStep.Server", placeOrder)
+                await endpointInstance.Send("Server", placeOrder)
                     .ConfigureAwait(false);
-                Console.WriteLine($"Sent a PlaceOrder message with id: {orderId:N}");
+                log.Info($"Place Order command sent with ID: {orderId:N}");
+                
             }
         }
     }
